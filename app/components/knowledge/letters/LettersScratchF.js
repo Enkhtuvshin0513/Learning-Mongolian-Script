@@ -24,7 +24,6 @@ import RNSketchCanvas from '@terrylinla/react-native-sketch-canvas';
 export default class ScratchDraw extends Component {
   render() {
     const image = this.props.image;
-    console.log(image);
 
     return (
       <Container style={styles.Container}>
