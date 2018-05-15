@@ -17,7 +17,13 @@ import { StyleSheet } from 'react-native';
 import images from '../../images';
 import { Fonts } from '../../utils/Fonts';
 import { Database } from '../../config';
-import { AsyncStorage, ListView, ScrollView, View } from 'react-native';
+import {
+  AsyncStorage,
+  ListView,
+  ScrollView,
+  View,
+  Dimensions
+} from 'react-native';
 import Svg, {
   Circle,
   Ellipse,
@@ -63,64 +69,62 @@ export default class ArticlesRead extends Component {
   }
 
   render() {
-    console.log(Fonts);
+    const { width, height } = Dimensions.get('window');
 
     return (
       <Container>
-        <Content>
-          <Header>
-            <Body>
-              <Title>Зурлага</Title>
-            </Body>
-          </Header>
+        <Header>
+          <Body>
+            <Title>Зурлага</Title>
+          </Body>
+        </Header>
+        <Content contentContainerStyle={styles.Content}>
+          <View style={styles.title}>
+            <ArticleTitle style={styles.text}>{this.state.titleS}</ArticleTitle>
+          </View>
           <View style={styles.content}>
-            <ScrollView horizontal={true}>
-              <View style={{ flex: 1, flexDirection: 'row' }}>
-                <View>
-                  <ArticleTitle style={styles.text}>
-                    {this.state.titleS}
-                  </ArticleTitle>
-                </View>
-                <View>
-                  <ArticleContent style={styles.text}>
-                    {this.state.content}
-                  </ArticleContent>
-                </View>
-              </View>
-            </ScrollView>
+            <ArticleContent style={styles.text}>
+              {this.state.content}
+            </ArticleContent>
           </View>
         </Content>
       </Container>
     );
   }
 }
+
+const { width, height } = Dimensions.get('window');
 const ArticleTitle = styled.Text`
-  background-color: green;
   transform: rotate(90deg);
   font-size: 20;
+  font-weight: bold;
+  width: 300;
   height: 300;
-  width: 800;
+  padding-top: 80;
+  padding-left: 20;
 `;
 const ArticleContent = styled.Text`
-  background-color: red;
   transform: rotate(90deg);
   font-size: 20;
-  height: 300;
   width: 800;
+  height: ${width};
+  padding-bottom: 50;
+  padding-top: 50;
+  padding-right: 200;
+  padding-left: 50;
 `;
 const styles = StyleSheet.create({
   content: {
-    flexDirection: 'row',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-
-  left: {
-    flexDirection: 'row'
-  },
-  right: {
-    flexDirection: 'row'
+  title: {
+    justifyContent: 'center',
+    fontFamily: Fonts.mongol
   },
   text: {
+    justifyContent: 'center',
+    alignItems: 'center',
     fontFamily: Fonts.mongol
   }
 });
