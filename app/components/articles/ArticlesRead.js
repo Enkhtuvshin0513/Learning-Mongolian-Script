@@ -79,9 +79,6 @@ export default class ArticlesRead extends Component {
           </Body>
         </Header>
         <Content contentContainerStyle={styles.Content}>
-          <View style={styles.title}>
-            <ArticleTitle style={styles.text}>{this.state.titleS}</ArticleTitle>
-          </View>
           <View style={styles.content}>
             <ArticleContent style={styles.text}>
               {this.state.content}
@@ -107,12 +104,13 @@ const ArticleTitle = styled.Text`
 const ArticleContent = styled.Text`
   transform: rotate(90deg);
   font-size: 20;
-  width: 800;
+  width: 1500;
   height: ${width};
+  margin-top: 400;
   padding-bottom: 50;
   padding-top: 50;
-  padding-right: 200;
-  padding-left: 50;
+  padding-right: 20;
+  padding-left: 200;
 `;
 const styles = StyleSheet.create({
   content: {
