@@ -36,55 +36,38 @@ class Exercises extends Component {
   }
   render() {
     const items = this.props.questions;
+    console.log(items);
 
     return (
       <Container>
         <Header>
           <Body>
-            <Title>Дасгал</Title>
+            <Title>{this.props.xaxa}</Title>
           </Body>
         </Header>
-
         <Content>
-          <TouchableOpacity
-            style={styles.Button}
-            onPress={() => Actions.answer1({})}
-          >
-            <Text>᠌АСУУЛТ 1</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.Button}>
-            <Text>᠌АСУУЛТ 2</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.Button}>
-            <Text>᠌АСУУЛТ 3</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.Button}>
-            <Text>᠌АСУУЛТ 4</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.Button}>
-            <Text>᠌АСУУЛТ 5</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.Button}>
-            <Text>᠌АСУУЛТ 6</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.Button}>
-            <Text>᠌АСУУЛТ 7</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.Button}>
-            <Text>᠌АСУУЛТ 8</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.Button}>
-            <Text>᠌АСУУЛТ 9</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.Button}>
-            <Text>᠌АСУУЛТ 10</Text>
-          </TouchableOpacity>
+          {Object.keys(items).map(i => (
+            <Card>
+              <CardItem button onPress={() => console.log(xax)>
+                <Left>
+                  <Thumbnail />
+                  <Body>
+                    <Text>{items[i].answer}</Text>
+                  </Body>
+                </Left>
+              </CardItem>
+            </Card>
+          ))}
         </Content>
       </Container>
     );
   }
 }
 const styles = StyleSheet.create({
+  ListItem: {
+    marginBottom: 30
+  },
+
   ModalButton: {
     alignSelf: 'center',
     borderRadius: 10,
@@ -93,14 +76,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   Button: {
-    height: 100,
     marginBottom: 5,
-    alignItems: 'center',
-    backgroundColor: '#DDDDDD',
-    paddingTop: 30
+    width: 200,
+    textAlign: 'center',
+    justifyContent: 'center'
   },
   Content: {
-    paddingBottom: 20,
+    marginTop: 50,
     alignSelf: 'center'
   },
   Thumbnail: {

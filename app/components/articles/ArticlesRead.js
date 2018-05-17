@@ -98,6 +98,7 @@ const ArticleTitle = styled.Text`
   transform: rotate(90deg);
   font-size: 20;
   font-weight: bold;
+  font-family: ${Fonts.mongol}
   width: 300;
   height: 300;
   padding-top: 80;
