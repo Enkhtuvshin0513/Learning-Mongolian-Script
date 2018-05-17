@@ -27,16 +27,11 @@ class Exercises extends Component {
       item: {}
     };
   }
-  disbale(index) {
-    if (index === 1) {
-      return false;
-    } else {
-      return true;
-    }
+  renderAnswer(answer) {
+    return answer;
   }
   render() {
     const items = this.props.questions;
-    console.log(items);
 
     return (
       <Container>
@@ -48,11 +43,11 @@ class Exercises extends Component {
         <Content>
           {Object.keys(items).map(i => (
             <Card>
-              <CardItem button onPress={() => console.log(xax)>
+              <CardItem button onPress={() => console.log('xaxa')}>
                 <Left>
                   <Thumbnail />
                   <Body>
-                    <Text>{items[i].answer}</Text>
+                    <Text>{this.renderAnswer(items[i].answer)}</Text>
                   </Body>
                 </Left>
               </CardItem>
