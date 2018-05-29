@@ -15,8 +15,6 @@ import {
 } from 'native-base';
 import { StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import images from '../../images';
-import Zurlag from '../../letters/zurlag';
 import Modal from 'react-native-modal';
 
 class Exercises extends Component {
@@ -43,7 +41,15 @@ class Exercises extends Component {
         <Content>
           {Object.keys(items).map(i => (
             <Card>
-              <CardItem button onPress={() => console.log('xaxa')}>
+              <CardItem
+                button
+                onPress={() =>
+                  Actions.DoExercise({
+                    items: items,
+                    index: i
+                  })
+                }
+              >
                 <Left>
                   <Thumbnail />
                   <Body>

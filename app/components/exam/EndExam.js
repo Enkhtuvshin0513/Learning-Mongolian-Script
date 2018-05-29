@@ -9,9 +9,8 @@ import {
   Title,
   Thumbnail
 } from 'native-base';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import images from '../images';
 
 class Main extends Component {
   constructor() {
@@ -29,18 +28,21 @@ class Main extends Component {
           </Body>
         </Header>
         <Content contentContainerStyle={styles.Content}>
-          <Thumbnail style={styles.Thumbnail} source={images.mainlogo} />
-          <Button style={styles.Button} onPress={() => Actions.KnowType({})}>
-            <Text>Мэдлэг </Text>
+          <View>
+            <Text>Та {this.props.correct} асуултанд зөв хариулсан байна</Text>
+          </View>
+          <Button
+            full
+            style={styles.Button}
+            onPress={() => Actions.StartExam({})}
+          >
+            <Text>Дахин тоглох </Text>
           </Button>
-          <Button style={styles.Button} onPress={() => Actions.Exercise({})}>
-            <Text>Дасгал </Text>
+          <Button full style={styles.Button}>
+            <Text>Найзууддаа хуваалцах</Text>
           </Button>
-          <Button style={styles.Button} onPress={() => Actions.StartExam({})}>
-            <Text>Шалгалт</Text>
-          </Button>
-          <Button style={styles.Button} onPress={() => Actions.ArticlesCat({})}>
-            <Text>Унших </Text>
+          <Button full style={styles.Button} onPress={() => Actions.Main({})}>
+            <Text>Гарах </Text>
           </Button>
         </Content>
       </Container>
@@ -50,7 +52,6 @@ class Main extends Component {
 const styles = StyleSheet.create({
   Button: {
     marginBottom: 5,
-    width: 200,
     textAlign: 'center',
     justifyContent: 'center',
     fontSize: 16,

@@ -9,6 +9,10 @@ import LettersTabs from './knowledge/letters/LettersTabs';
 import ScratchTabs from './knowledge/scratch/ScratchTabs';
 import Exercise from './exercise/Exercise';
 import Exercises from './exercise/Exercises';
+import DoExercise from './exercise/DoExercise';
+import StartExam from './exam/StartExam';
+import EndExam from './exam/EndExam';
+import DoExam from './exam/DoExam';
 import Main from './Main';
 
 import answer1 from './exercise/anhan/answer1';
@@ -44,16 +48,10 @@ class MainRouter extends Component {
           <Scene key="ScratchTabs" component={ScratchTabs} hideNavBar />
           <Scene key="Exercise" component={Exercise} hideNavBar />
           <Scene key="Exercises" component={Exercises} hideNavBar />
-          <Scene key="answer1" component={answer1} />
-          <Scene key="answer2" component={answer2} />
-          <Scene key="answer3" component={answer3} />
-          <Scene key="answer4" component={answer4} />
-          <Scene key="answer5" component={answer5} />
-          <Scene key="answer6" component={answer6} />
-          <Scene key="answer7" component={answer7} />
-          <Scene key="answer8" component={answer8} />
-          <Scene key="answer9" component={answer9} />
-          <Scene key="answer10" component={answer10} />
+          <Scene key="DoExercise" component={DoExercise} hideNavBar />
+          <Scene key="StartExam" component={StartExam} hideNavBar />
+          <Scene key="DoExam" component={DoExam} hideNavBar />
+          <Scene key="EndExam" component={EndExam} hideNavBar />
         </Scene>
       </Router>
     );

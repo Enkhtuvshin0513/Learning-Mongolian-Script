@@ -61,7 +61,16 @@ export default class Exercise extends Component {
             </CardItem>
           </Card>
           <Card>
-            <CardItem cardBody>
+            <CardItem
+              cardBody
+              button
+              onPress={() =>
+                Actions.Exercises({
+                  questions: questions.level2,
+                  xaxa: 'Дунд шат'
+                })
+              }
+            >
               <Image
                 source={images.dund}
                 style={{ height: 113, width: null, flex: 1 }}
@@ -76,7 +85,16 @@ export default class Exercise extends Component {
             </CardItem>
           </Card>
           <Card>
-            <CardItem cardBody>
+            <CardItem
+              cardBody
+              button
+              onPress={() =>
+                Actions.Exercises({
+                  questions: questions.level3,
+                  xaxa: 'Ахисан шат'
+                })
+              }
+            >
               <Image
                 source={images.ahisan}
                 style={{ height: 113, width: null, flex: 1 }}
